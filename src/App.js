@@ -3,12 +3,11 @@ import Country from './Country'
 
 class App extends Component {
   state = {
-    data: [],
-    name: "byku"
+    data: []
   }
 
   componentDidMount() {
-    fetch('http://countries-and-rulers-app.herokuapp.com/countries', {mode: "cors"})
+    fetch('https://countries-and-rulers-app.herokuapp.com/countries', {mode: "cors"})
       .then(response => response.json())
       .then(data => {
         console.log(data);
