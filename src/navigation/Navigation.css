@@ -1,0 +1,14 @@
+﻿.navigation{
+    background-color: aquamarine;
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    justify-content: center;
+}
+
+.navigationItem{
+    background-color: skyblue;
+    padding: 10px;
+    margin: 10px;
+    
+}

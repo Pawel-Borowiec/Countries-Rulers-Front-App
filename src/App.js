@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import Country from './Country'
+import Header from './header/Header';
+import Footer from './footer/Footer';
 
 class App extends Component {
   state = {
@@ -17,8 +19,12 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        Hello {this.state.data.map(country =><Country info={country} />)}
+      <div class="container">
+        <Header />
+        <div>
+          Hello {this.state.data.map(country =><Country info={country} />)}
+        </div>
+        <Footer />
       </div>
     );
   }
