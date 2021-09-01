@@ -1,0 +1,14 @@
+﻿.header {
+    background-color: chartreuse;
+    
+}
+
+.title {
+    font-size: 80px;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 55px;
+    text-align: center
+}
