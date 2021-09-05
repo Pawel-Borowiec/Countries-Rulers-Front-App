@@ -5,6 +5,7 @@ import Header from './elements/header/Header';
 import Footer from './elements/footer/Footer';
 import CountriesList from './elements/countriesList/CountriesList';
 import Home from './elements/home/Home';
+import CountryForm from './elements/countryForm/CountryForm';
 import './styles.css';
 
 
@@ -19,7 +20,7 @@ class App extends Component {
             <div class="container">
             <Route exact path="/"><Home /></Route>
             <Route path="/countries"><CountriesList/></Route>
-
+            <Route path="/rulers"><CountryForm/></Route>
             </div>
           <Footer />
         </Router>
