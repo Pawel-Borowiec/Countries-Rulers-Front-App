@@ -1,4 +1,5 @@
 ﻿import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 import './Country.css';
 
 class Country extends Component {
@@ -12,6 +13,11 @@ class Country extends Component {
           <td>{this.props.index+1}</td>
           <td>{this.props.info.name}</td>
           <td><img src={this.props.info.flag}></img></td>
+          <td>
+          <Link to={"countries/"+this.props.info.id+"/details"}><button class="detailsButton">Details</button></Link>
+          <Link to={"countries/"+this.props.info.id+"/edit"}><button class="editButton">Edit</button></Link>
+          <button class="deleteButton">Delete</button>
+          </td>
       </tr>
     );
   }

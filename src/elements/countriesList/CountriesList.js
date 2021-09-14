@@ -2,6 +2,7 @@
 import './CountriesList.css';
 import '../country/Country'
 import Country from '../country/Country';
+import {Link } from 'react-router-dom'
 
 class CountriesList extends Component {
   state = {
@@ -27,9 +28,11 @@ class CountriesList extends Component {
                 <th>No</th>
                 <th>Name</th>
                 <th>Flag</th>
+                <th>Actions</th>
               </tr> 
            {this.state.data.map((country, index) =><Country info={country} index={index}/>)}
            </table>
+           <Link to={'countries/newCountry'}><button class="addButton">Add new Country</button></Link>
       </div>
     );
   }

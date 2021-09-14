@@ -2,3 +2,24 @@
     max-width: 200px;
     height: auto;
 }
+
+.deleteButton {
+    background-color: red;
+}
+
+.editButton {
+    background-color: orange;
+}
+
+.detailsButton {
+    background-color: yellowgreen;
+}
+
+.editButton, .deleteButton, .detailsButton{
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border:0px;
+    width: 100px;
+    height: 60px;
+}
