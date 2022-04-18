@@ -16,10 +16,9 @@ class App extends Component {
 
   render() {
     return (
-      <div >
+      <div className='container'>
         <Router>
           <Header />
-            <div class="container">
             <Route exact path="/"><Home /></Route>
 
             <Route exact path="/countries"><CountriesList/></Route>
@@ -29,7 +28,6 @@ class App extends Component {
             <Route exact path="/dynasties"><DynastiesList/></Route>
 
             <Route path="/rulers"><RulersList/></Route>
-            </div>
           <Footer />
         </Router>
       </div>
