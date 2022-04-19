@@ -9,6 +9,7 @@ import DynastiesList from './elements/dynastiesList/DynastiesList';
 import './styles.css';
 import RulersList from './elements/rulersList/RulersList';
 import CountryDetails from './elements/countryDetails/CountryDetails';
+import CountryEdit from './elements/countryEdit/countryEdit';
 
 
 class App extends Component {
@@ -24,6 +25,7 @@ class App extends Component {
               <Route exact path="/countries" element={<CountriesList />}></Route>
               <Route exact path="/countries/newCountry" element={<CountryForm />}></Route>
               <Route path="/countries/:id/details" element={<CountryDetails />}></Route>
+              <Route path="/countries/:id/edit" element={<CountryEdit />}></Route>
               <Route exact path="/dynasties" element={<DynastiesList />}></Route>
               <Route path="/rulers" element={<RulersList />}></Route>
             </Routes>

@@ -1,26 +1,33 @@
 ﻿import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import './Country.css';
+import { useNavigate } from "react-router-dom";
 
-class Country extends Component {
+function Country(props) {
+  const navigate = useNavigate(); 
 
-
-
-
-  render() {
-    return (
-      <tr key={this.props.index}>
-          <td>{this.props.index+1}</td>
-          <td>{this.props.info.name}</td>
-          <td><img src={this.props.info.flag}></img></td>
-          <td>
-          <Link to={"countries/"+this.props.info.id+"/details"}><button class="detailsButton">Details</button></Link>
-          <Link to={"countries/"+this.props.info.id+"/edit"}><button class="editButton">Edit</button></Link>
-          <button className="deleteButton">Delete</button>
-          </td>
-      </tr>
-    );
+  function moveToDetails(id){
+    navigate(id+"/details")
   }
+
+  function moveToEdit(id){
+    navigate(id+"/edit")
+  }
+
+
+  return (
+    <tr key={props.index}>
+        <td>{props.index+1}</td>
+        <td>{props.info.name}</td>
+        <td><img src={props.info.flag}></img></td>
+        <td>
+        <button class="detailsButton" onClick={() => moveToDetails(props.info.id)}>Details</button>
+        <button class="editButton" onClick={() => moveToEdit(props.info.id)}>Edit</button>
+        <button className="deleteButton">Delete</button>
+        </td>
+    </tr>
+  );
 }
+
 
 export default Country;
