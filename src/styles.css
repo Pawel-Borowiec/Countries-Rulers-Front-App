@@ -5,13 +5,18 @@ body {
     background-color: lightblue;
     font-family: 'Medula One', cursive;
     font-size: 25px;
-    background-image: url("./images/papirus.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: linear-gradient(
+        90deg,
+     rgb(235, 149, 51) 0%,
+     rgb(241, 232, 148) 50%
+    );
     height: 100%;
 }
 
 .container {
     background-color: burlywood;
     margin: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }

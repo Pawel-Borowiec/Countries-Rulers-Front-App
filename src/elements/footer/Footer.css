@@ -1,7 +1,11 @@
 ﻿.footer {
-    background-color: crimson;
-    width: 100%-40px;
+    position: absolute;
+    bottom: 0px;
     font-size: 40px;
-    padding: 10px;
+    padding: 15px;
+    left: 5%;
+    right: 5%;
     text-align: center;
+    border: solid ;
+    border-width: 3px 0px 0px 0px;
 }

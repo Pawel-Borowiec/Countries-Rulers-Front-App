@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Header from './elements/header/Header';
 import Footer from './elements/footer/Footer';
 import CountriesList from './elements/countriesList/CountriesList';
@@ -19,15 +19,14 @@ class App extends Component {
       <div className='container'>
         <Router>
           <Header />
-            <Route exact path="/"><Home /></Route>
-
-            <Route exact path="/countries"><CountriesList/></Route>
-            <Route exact path="/countries/newCountry"><CountryForm/></Route>
-            <Route path="/countries/:id/details"><CountryDetails/></Route>
-
-            <Route exact path="/dynasties"><DynastiesList/></Route>
-
-            <Route path="/rulers"><RulersList/></Route>
+            <Routes>
+              <Route exact path="/" element={<Home />}></Route>
+              <Route exact path="/countries" element={<CountriesList />}></Route>
+              <Route exact path="/countries/newCountry" element={<CountryForm />}></Route>
+              <Route path="/countries/:id/details" element={<CountryDetails />}></Route>
+              <Route exact path="/dynasties" element={<DynastiesList />}></Route>
+              <Route path="/rulers" element={<RulersList />}></Route>
+            </Routes>
           <Footer />
         </Router>
       </div>

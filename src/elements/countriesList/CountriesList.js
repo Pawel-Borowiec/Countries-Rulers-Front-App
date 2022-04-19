@@ -1,41 +1,48 @@
-﻿import React, {Component} from 'react';
+﻿import React, { useState, useEffect} from 'react';
 import './CountriesList.css';
 import '../country/Country'
 import Country from '../country/Country';
 import {Link } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
-class CountriesList extends Component {
-  state = {
-    data: []
-  }
+function CountriesList(){
 
-  componentDidMount() {
+  const [data, setData] = useState([])
+  const navigate = useNavigate(); 
+
+  useEffect(() => {
     fetch('https://countries-and-rulers-app.herokuapp.com/countries', {mode: "cors"})
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-        this.setState( {data})
-      });
+    .then(response => response.json())
+    .then(content => {
+      setData(content);
+    });
+  });
+
+  const moveToAddNewCountry = e =>{
+    e.preventDefault();
+    navigate("/countries/newCountry")
   }
 
 
 
-  render() {
     return (
-      <div class="countriesList">
-            <table>
-              <tr>
-                <th>No</th>
-                <th>Name</th>
-                <th>Flag</th>
-                <th>Actions</th>
-              </tr> 
-           {this.state.data.map((country, index) =><Country info={country} index={index}/>)}
+      <div className="countriesList">
+            <table className='countriesTable'>
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Name</th>
+                  <th>Flag</th>
+                  <th>Actions</th>
+                </tr> 
+              </thead>
+           <tbody>
+             {data.map((country, index) =><Country info={country} index={index}/>)}
+           </tbody>
            </table>
-           <Link to={'countries/newCountry'}><button class="addButton">Add new Country</button></Link>
+           <button className="addButton" onClick={moveToAddNewCountry}>Add new Country</button>
       </div>
     );
-  }
 }
 
 export default CountriesList;
