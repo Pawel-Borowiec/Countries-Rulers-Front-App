@@ -1,13 +1,19 @@
 ﻿.addButton {
-    background-color: green;
+    background-color: transparent;
     border-radius: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 10px;
     border:0px;
-    width: 100%;
+    width: 40%;
+    min-width: 100px;
     height: 60px;
-    color: whitesmoke;
+    border:  solid black 3px;
 
+    transition: ease-in-out 0.3s;
+}
+
+.addButton:hover{
+    background-color: green;
+    color: whitesmoke;
 }
 
 
@@ -15,4 +21,18 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    width: fit-content;
+    align-self: center;
+    font-size: 30px;
+    align-items: center;
+}
+
+tr:nth-child(even){background-color: #ffe2a3;}
+
+.countriesTable{
+    border-spacing: 0px;
+}
+
+td{
+    padding: 5px 25px 5px 5px;
 }

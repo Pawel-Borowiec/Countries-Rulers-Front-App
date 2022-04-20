@@ -1,23 +1,29 @@
 import React, {Component} from 'react';
+import { useNavigate } from "react-router-dom";
+function Country(props) {
+  const navigate = useNavigate(); 
 
-class Country extends Component {
-
-
-
-
-  render() {
-    return (
-      <tr>
-          <td>{this.props.index+1}</td>
-          <td>{this.props.info.name}</td>
-          <td><img src={this.props.info.coat}></img></td>
-          <td>
-          <button class="editButton">Edit</button>
-          <button class="deleteButton">Delete</button>
-          </td>
-      </tr>
-    );
+  function moveToDetails(id){
+    navigate(id+"/details")
   }
+
+  function moveToEdit(id){
+    navigate(id+"/edit")
+  }
+
+
+  return (
+    <tr>
+        <td>{props.index+1}</td>
+        <td>{props.info.name}</td>
+        <td>{props.info.dynastyName}</td>
+        <td>
+        <button class="detailsButton" onClick={() => moveToDetails(props.info.id)}>Details</button>
+        <button class="editButton" onClick={() => moveToEdit(props.info.id)}>Edit</button>
+        <button className="deleteButton">Delete</button>
+        </td>
+    </tr>
+  );
 }
 
 export default Country;

@@ -3,23 +3,28 @@
     height: auto;
 }
 
-.deleteButton {
-    background-color: red;
-}
-
-.editButton {
-    background-color: orange;
-}
-
-.detailsButton {
-    background-color: yellowgreen;
-}
-
 .editButton, .deleteButton, .detailsButton{
     border-radius: 10px;
     margin-left: 10px;
     margin-right: 10px;
-    border:0px;
+    border:solid 2px;
+    background-color: transparent;
+    font-family: 'Medula One', cursive;
+    font-size: 30px;
     width: 100px;
     height: 60px;
+    transition: ease-in-out 0.3s;
+    cursor: pointer;
+}
+
+.detailsButton:hover{
+    background-color: lightgreen;
+}
+
+.editButton:hover{
+    background-color: orange;
+}
+
+.deleteButton:hover{
+    background-color: red;
 }

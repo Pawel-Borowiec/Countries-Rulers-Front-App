@@ -6,4 +6,20 @@
 body{
     font-family: 'Medula One', cursive;
     font-size: 25px;
+    background: linear-gradient(
+        90deg,
+     rgb(228, 176, 117) 0%,
+     rgb(235, 162, 90) 50%
+    );
+    height: 100%;
 }
+<<<<<<< HEAD
+=======
+
+.container {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+>>>>>>> non-tailwind

@@ -1,20 +1,26 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Medula+One&display=swap');
 
 .navigation{
-    background-color: aquamarine;
     margin: 20px;
     display: flex;
-    width: 100%-40px;
+    width: fit-content;
     height: fit-content;
     justify-content: center;
+    border-style: solid;
+    border-width: 3px 0px;
 }
 
 .navigationItem{
-    background-color: skyblue;
-    padding: 10px;
+    background-color: brown;
+    padding: 15px;
     margin: 10px;
     font-size: 40px;
-    
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+}
+
+.navigationItem:hover{
+    background-color: burlywood;
 }
 
 a{

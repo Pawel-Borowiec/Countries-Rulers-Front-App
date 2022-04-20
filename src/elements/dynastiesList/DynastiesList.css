@@ -1,0 +1,9 @@
+.dynastiesList{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: fit-content;
+    align-self: center;
+    font-size: 30px;
+    align-items: center;
+}
