@@ -19,7 +19,7 @@ function Country(props){
         <td>{props.index+1}</td>
         <td>{props.info.name}</td>
         <td><img src={props.info.coat}></img></td>
-        <td>{props.info.countryOfOrigin}</td>
+        <td>placeholder</td>
         <td>
           <button class="detailsButton" onClick={() => moveToDetails(props.info.id)}>Details</button>
           <button class="editButton" onClick={() => moveToEdit(props.info.id)}>Edit</button>
