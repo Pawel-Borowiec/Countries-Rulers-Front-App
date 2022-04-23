@@ -27,8 +27,7 @@ class DynastiesList extends Component {
                 <tr>
                   <th>No</th>
                   <th>Name</th>
-                  <th>Coat</th>
-                  <th>Country of origin</th>
+                  <th>Coat</th> 
                   <th>Actions</th>
                 </tr> 
               </thead>
@@ -36,7 +35,7 @@ class DynastiesList extends Component {
             {this.state.data.map((dynasty, index) =><Dynasty info={dynasty} index={index}/>)}
            </tbody>
            </table>
-           <Link to={'dynasties/newDynasty'}><button class="addButton">Add new Dynasty</button></Link>
+           <Link to={'dynasties/newDynasty'}><button className="addButton">Add new Dynasty</button></Link>
       </div>
     );
   }

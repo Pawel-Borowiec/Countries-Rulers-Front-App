@@ -18,7 +18,6 @@ function Country(props) {
         <td>{props.info.name}</td>
         <td>{props.info.dynastyName}</td>
         <td>
-        <button class="detailsButton" onClick={() => moveToDetails(props.info.id)}>Details</button>
         <button class="editButton" onClick={() => moveToEdit(props.info.id)}>Edit</button>
         <button className="deleteButton">Delete</button>
         </td>

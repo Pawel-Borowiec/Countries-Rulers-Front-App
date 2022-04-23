@@ -19,7 +19,6 @@ function Navigation(){
         <div class="navigationItem" onClick={() => navigateToEndpoint(1)}>Rulers</div>
         <div class="navigationItem" onClick={() => navigateToEndpoint(2)}>Countries</div>
         <div class="navigationItem" onClick={() => navigateToEndpoint(3)}>Dynasties</div>
-        <div class="navigationItem" onClick={() => navigateToEndpoint(4)}>Data model</div>
         <div class="navigationItem"><a href={endpoints[5]}>Github</a></div>
       </nav>
     );

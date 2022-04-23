@@ -28,3 +28,7 @@ form {
     text-decoration: none;
     text-align: center;
 }
+
+.editForm{
+    width: fit-content;
+}

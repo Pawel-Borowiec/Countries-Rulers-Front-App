@@ -11,7 +11,7 @@ class Home extends Component {
       <div class="content-message">
           <h1>Welcome in my app. I am glad that someone visit here ;)</h1>
           <h3>Topic</h3>
-          <p>This app is about european countries and their rulers. I made that app to fill my portfolio on gihub due to lack of well done projects in it. I count here every country separatly so Poland and Polish-Lithuanian Commonwealth are not single entity.</p>
+          <p>This app is about making simple api with some data ( In that case about countries and their rulers) and reading it by react application. </p>
           <h3>Tech stack</h3>
           <p>Backend has been made by me in Spring Boot while Frontend in React.js</p>
          

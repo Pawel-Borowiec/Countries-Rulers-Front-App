@@ -3,9 +3,6 @@ import { useNavigate } from "react-router-dom";
 function Country(props){
   const navigate = useNavigate(); 
 
-  function moveToDetails(id){
-    navigate(id+"/details")
-  }
 
   function moveToEdit(id){
     navigate(id+"/edit")
@@ -19,9 +16,7 @@ function Country(props){
         <td>{props.index+1}</td>
         <td>{props.info.name}</td>
         <td><img src={props.info.coat}></img></td>
-        <td>placeholder</td>
         <td>
-          <button class="detailsButton" onClick={() => moveToDetails(props.info.id)}>Details</button>
           <button class="editButton" onClick={() => moveToEdit(props.info.id)}>Edit</button>
           <button className="deleteButton">Delete</button>
         </td>

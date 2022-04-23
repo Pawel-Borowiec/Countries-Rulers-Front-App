@@ -9,10 +9,30 @@ function CountryEdit() {
       const [data, setData] = useState([])
       const navigate = useNavigate(); 
 
+      const myChangeHandler = (event) => {
+        
+        var temp = data
+        console.log(temp)
+        let nam = event.target.name;
+        let val = event.target.value;
+        temp[nam] = val;
+        setData(temp)
+      }
+
       const returnToList = e =>{
         e.preventDefault();
         navigate("/countries")
       }
+
+      function handleSubmit() {
+        const country = {name : data.name, url : data.flag, id : data.id}
+        console.log(country)
+      fetch('https://countries-and-rulers-app.herokuapp.com/countries/'+id,{
+      method : 'PUT',
+      headers : { "Content-Type" : "application/json"},
+      body :  country
+      })
+    }
 
       useEffect(() => {
         fetch('https://countries-and-rulers-app.herokuapp.com/countries/'+id, {mode: "cors"})
@@ -20,16 +40,26 @@ function CountryEdit() {
         .then(content => {
           setData(content);
         });
-      });
+      }, [data]);
 
       
       return (
-        <div>
-          <h3>ID: {id}</h3>
-          <h2>{data.name}</h2>
-          <img src={data.flag}></img>
-          <button>Zapisz zmiany</button>
+        <div className='dynastiesForm'>
+          <div className='editForm'>
+            <div className="element">Edit form</div>
+            <div>
+              <div className="element">Name:</div>
+              <input name='name' type="text" placeholder={data.name} onChange={myChangeHandler} />
+            </div>
+            <div>
+              <div className="element">Flag(put here url link to flag):</div>
+              <input name='flag' type="text" placeholder={data.flag}  onChange={myChangeHandler}/>
+            </div>
+            <button className="submitButton"  onClick={handleSubmit}>Submit</button>
+          </div>
           <button className='returnButton' onClick={returnToList}>Return to list of countries</button>
+          
+          
         </div>
       );
 }

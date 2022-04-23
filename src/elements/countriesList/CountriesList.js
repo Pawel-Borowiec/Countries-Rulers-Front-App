@@ -23,6 +23,14 @@ function CountriesList(){
     navigate("/countries/newCountry")
   }
 
+  function removeFromData(index){
+    for (let i = 0; i < data.length; i++) {
+      if(data[i].id == index){
+        delete data[i]
+      }
+  }
+  }
+
 
 
     return (
@@ -37,7 +45,7 @@ function CountriesList(){
                 </tr> 
               </thead>
            <tbody>
-             {data.map((country, index) =><Country info={country} index={index}/>)}
+             {data.map((country, index) =><Country info={country} index={index} func={removeFromData}/>)}
            </tbody>
            </table>
            <button className="addButton" onClick={moveToAddNewCountry}>Add new Country</button>

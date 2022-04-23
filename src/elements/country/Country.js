@@ -6,12 +6,17 @@ import { useNavigate } from "react-router-dom";
 function Country(props) {
   const navigate = useNavigate(); 
 
-  function moveToDetails(id){
-    navigate(id+"/details")
-  }
 
   function moveToEdit(id){
     navigate(id+"/edit")
+  }
+
+   function deleteCountry(index) {
+    fetch('https://countries-and-rulers-app.herokuapp.com/countries/'+index,{
+    method : 'DELETE',
+    headers : { "Content-Type" : "application/json"}
+    })
+    props.func(props.info.id)
   }
 
 
@@ -21,9 +26,8 @@ function Country(props) {
         <td>{props.info.name}</td>
         <td><img src={props.info.flag}></img></td>
         <td>
-        <button class="detailsButton" onClick={() => moveToDetails(props.info.id)}>Details</button>
         <button class="editButton" onClick={() => moveToEdit(props.info.id)}>Edit</button>
-        <button className="deleteButton">Delete</button>
+        <button className="deleteButton" onClick={() => deleteCountry(props.info.id)}>Delete</button>
         </td>
     </tr>
   );

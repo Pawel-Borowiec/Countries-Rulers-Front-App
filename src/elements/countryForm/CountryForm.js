@@ -35,18 +35,20 @@ class CountryForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div class="element">Enter new Country Data</div>
-        <div>
-          <div class="element">Name:</div>
-          <input name='name' type="text" placeholder={'Poland'} onChange={this.myChangeHandler} />
-        </div>
-        <div>
-          <div class="element">Flag(put here url link to flag):</div>
-          <input name='flag' type="text" placeholder={'Flags\'s URL'} onChange={this.myChangeHandler} />
-        </div>
-        <input class="submitButton" type="submit" value="Submit" />
-      </form>
+      <div className='dynastiesForm'>
+          <form onSubmit={this.handleSubmit}>
+          <div class="element">Enter new Country Data</div>
+          <div>
+            <div class="element">Name:</div>
+            <input name='name' type="text" placeholder={'Poland'} onChange={this.myChangeHandler} />
+          </div>
+          <div>
+            <div class="element">Flag(put here url link to flag):</div>
+            <input name='flag' type="text" placeholder={'Flags\'s URL'} onChange={this.myChangeHandler} />
+          </div>
+          <input class="submitButton" type="submit" value="Submit" />
+        </form>
+      </div>
     );
   }
 }
